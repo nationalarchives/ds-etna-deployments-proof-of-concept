@@ -1,0 +1,22 @@
+name: Deploy to develop
+
+on:
+  push:
+    branches:
+      - develop
+
+concurrency:
+  group: deploy-develop
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: develop
+      - name: Deploy
+        uses: ./.github/actions/deploy
+        with:
+          config: config-aws-develop.json
+          environment: develop
