@@ -15,9 +15,6 @@ runs:
   using: "composite"
   steps:
     - name: DEBUG
-      run: cat config-aws.json
-      shell: bash
-    - name: DEBUG
       run: cat ${{ inputs.config }}
       shell: bash
     - name: DEBUG
