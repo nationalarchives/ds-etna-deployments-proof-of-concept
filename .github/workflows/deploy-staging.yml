@@ -11,6 +11,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main
       - id: version-tag
         name: Create release version
         run: |
@@ -38,6 +40,8 @@ jobs:
       - release
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main
       - name: Deploy
         uses: ./.github/actions/deploy
         with:
