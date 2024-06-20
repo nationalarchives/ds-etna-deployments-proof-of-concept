@@ -1,4 +1,4 @@
-name: Deploy a feature environment
+name: Deploy feature environment
 
 on:
   push:
