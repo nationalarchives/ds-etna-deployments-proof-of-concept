@@ -6,7 +6,7 @@ on:
       - 'feature/**'
 
 concurrency:
-  group: deploy-feature
+  group: deploy-feature-${{ github.ref }}
 
 jobs:
   deploy:
