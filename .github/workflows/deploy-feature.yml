@@ -12,15 +12,14 @@ concurrency:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    if: ${{ github.ref_name != 'main' }}
     steps:
       - uses: actions/checkout@v4
-      - name: Debug
-        run: |
-          echo "github.ref:       ${{ github.ref }}"
-          echo "github.ref_name:  ${{ github.ref_name }}"
-          echo "github.event.ref: ${{ github.event.ref }}"
+      - name: Get environment name
+        id: get-environment
+        run: echo "ENVIRONMENT=$(echo "${{ github.ref_name }}" | sed -e 's,/,-,g')" >> "$GITHUB_OUTPUT"
       - name: Deploy
         uses: ./.github/actions/deploy
         with:
           config: config-aws-develop.json
-          environment: ${{ inputs.branch }}
+          environment: ${{ steps.get-environment.outputs.ENVIRONMENT }}
