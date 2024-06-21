@@ -15,6 +15,9 @@ jobs:
     if: ${{ github.ref_name != 'main' }}
     steps:
       - uses: actions/checkout@v4
+      - name: Get environment name
+        id: get-environment
+        run: echo "ENVIRONMENT=$(echo "${{ github.ref_name }}" | sed -e 's,/,-,g')" >> "$GITHUB_OUTPUT"
       - name: Debug
         run: |
           echo "github.ref:       ${{ github.ref }}"
@@ -24,4 +27,4 @@ jobs:
         uses: ./.github/actions/deploy
         with:
           config: config-aws-develop.json
-          environment: ${{ inputs.branch }}
+          environment: ${{ steps.get-environment.outputs.ENVIRONMENT }}
