@@ -2,6 +2,16 @@ name: Deploy feature environment
 
 on:
   workflow_dispatch:
+    inputs:
+      config:
+        type: choice
+        description: Configuration
+        required: true
+        default: config-aws-develop.json
+        options:
+          - config-aws-develop.json
+          - config-aws-staging.json
+          - config-aws-production.json
   push:
     branches:
       - 'feature/**'
@@ -21,5 +31,5 @@ jobs:
       - name: Deploy
         uses: ./.github/actions/deploy
         with:
-          config: config-aws-develop.json
+          config: ${{ inputs.config }}
           environment: ${{ steps.get-environment.outputs.ENVIRONMENT }}
