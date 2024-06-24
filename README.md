@@ -1,23 +1,26 @@
-# ETNA
+# ETNA Deployments Proof of Concept
 
-https://tna.dblclk.dev
+## Working on new features
 
-## Docker compose
+![Proposed feature branch deployment process](/img/1.feature.drawio.png)
 
-```sh
-# Set up env vars
-touch .env
-echo "SECRET_KEY=$(python -c 'import secrets; print(secrets.token_hex())')" >> .env
-echo "POSTGRES_PASSWORD=$(python -c 'import secrets; print(secrets.token_hex())')" >> .env
-echo "KONG_CLIENT_KEY=[key]" >> .env
-echo "PLATFORMSH_CLI_TOKEN=[token]" >> .env
+- [Feature deployment workflow](https://github.com/nationalarchives/ds-etna-deployments-proof-of-concept/actions/workflows/deploy-feature.yml)
 
-# Start the services
-docker compose up -d
+## Code is tested in feature environment and is "releasable"
 
-# Test certbot - remove --dry-run if working
-docker compose run --rm certbot certonly --webroot --webroot-path /var/www/certbot/ --dry-run -d tna.dblclk.dev
+![Proposed deployment process to develop environment](/img/2.develop.drawio.png)
 
-# Renew cert
-docker compose run --rm certbot renew
-```
+- [Example push process from a service](https://github.com/nationalarchives/ds-etna-frontend/blob/main/.github/workflows/cd.yml#L54-L78)
+- [Develop deployment workflow](https://github.com/nationalarchives/ds-etna-deployments-proof-of-concept/actions/workflows/deploy-develop.yml)
+
+## All changes tested in develop environment and ready to release to staging environment
+
+![Proposed deployment process to staging environment](/img/3.staging.drawio.png)
+
+- [Staging deployment workflow](https://github.com/nationalarchives/ds-etna-deployments-proof-of-concept/actions/workflows/deploy-staging.yml)
+
+## All changes tested in staging environment and ready to release to production environment
+
+![Proposed deployment process to production environment](/img/4.production.drawio.png)
+
+- [Example release tag (already published)](https://github.com/nationalarchives/ds-etna-deployments-proof-of-concept/releases/tag/v24.06.24.2)
