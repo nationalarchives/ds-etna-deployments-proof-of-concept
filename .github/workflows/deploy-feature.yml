@@ -22,7 +22,7 @@ concurrency:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    if: ${{ github.ref_name != 'main' }}
+    if: github.ref_name != 'main'
     steps:
       - uses: actions/checkout@v4
       - name: Get environment name
