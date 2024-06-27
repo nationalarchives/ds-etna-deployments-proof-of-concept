@@ -9,14 +9,6 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  debug:
-    runs-on: ubuntu-latest
-    steps:
-      - run: |
-          echo "${{ github.event.ref }}"
-          echo "${{ github.event.ref_type }}"
-          echo "${{ github.ref_name }}"
-
   destroy:
     runs-on: ubuntu-latest
     if: (github.event.ref_type == 'branch' && startsWith(github.event.ref, 'feature/')) || startsWith(github.ref_name, 'feature/')
