@@ -10,7 +10,7 @@
         },
         "search": {
             "image": "docker pull ghcr.io/nationalarchives/national-archives-search-api",
-            "version": "24.07.18.90"
+            "version": "24.07.18.91"
         }
     }
 }
