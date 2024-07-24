@@ -2,7 +2,7 @@
     "services": {
         "frontend": {
             "image": "ghcr.io/nationalarchives/national-archives-website-frontend",
-            "version": "24.07.24.453"
+            "version": "24.07.24.454"
         },
         "cms": {
             "image": "ghcr.io/nationalarchives/national-archives-website",
