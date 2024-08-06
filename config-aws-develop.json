@@ -6,7 +6,7 @@
         },
         "cms": {
             "image": "ghcr.io/nationalarchives/national-archives-website",
-            "version": "24.08.06.469"
+            "version": "24.08.06.470"
         },
         "search": {
             "image": "docker pull ghcr.io/nationalarchives/national-archives-search-api",
