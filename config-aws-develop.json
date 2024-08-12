@@ -11,6 +11,9 @@
         "search_api": {
             "image": "ghcr.io/nationalarchives/ds-search-api",
             "version": "24.08.12.94"
+        },
+        "search": {
+            "version": "24.08.12.3"
         }
     }
 }
