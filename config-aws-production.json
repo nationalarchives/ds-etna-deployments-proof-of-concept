@@ -8,7 +8,7 @@
             "image": "ghcr.io/nationalarchives/national-archives-website",
             "version": "24.06.11.34"
         },
-        "search": {
+        "search_api": {
             "image": "docker pull ghcr.io/nationalarchives/national-archives-search-api",
             "version": "24.06.25.88"
         }

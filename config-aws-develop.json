@@ -1,15 +1,15 @@
 {
     "services": {
         "frontend": {
-            "image": "ghcr.io/nationalarchives/national-archives-website-frontend",
+            "image": "ghcr.io/nationalarchives/ds-frontend",
             "version": "24.06.27.397"
         },
         "cms": {
-            "image": "ghcr.io/nationalarchives/national-archives-website",
+            "image": "ghcr.io/nationalarchives/ds-wagtail",
             "version": "24.06.11.34"
         },
-        "search": {
-            "image": "docker pull ghcr.io/nationalarchives/national-archives-search-api",
+        "search_api": {
+            "image": "ghcr.io/nationalarchives/ds-search-api",
             "version": "24.06.25.88"
         }
     }
