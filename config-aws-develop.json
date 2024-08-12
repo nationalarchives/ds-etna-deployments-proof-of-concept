@@ -2,15 +2,15 @@
     "services": {
         "frontend": {
             "image": "ghcr.io/nationalarchives/ds-frontend",
-            "version": "24.06.27.397"
+            "version": "24.08.12.537"
         },
         "cms": {
             "image": "ghcr.io/nationalarchives/ds-wagtail",
-            "version": "24.06.11.34"
+            "version": "24.08.06.475"
         },
         "search_api": {
             "image": "ghcr.io/nationalarchives/ds-search-api",
-            "version": "24.06.25.88"
+            "version": "24.08.06.92"
         }
     }
 }
