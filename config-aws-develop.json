@@ -13,6 +13,7 @@
             "version": "24.08.12.94"
         },
         "search": {
+            "image": "ghcr.io/nationalarchives/ds-search",
             "version": "24.08.12.3"
         }
     }
