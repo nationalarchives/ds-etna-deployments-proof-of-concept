@@ -1,5 +1,7 @@
 # ETNA Deployments Proof of Concept
 
+> Moved to https://github.com/nationalarchives/ds-infrastructure-web
+
 ## Working on new features
 
 ![Proposed feature branch deployment process](/img/1.feature.drawio.png)
